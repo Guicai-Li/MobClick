@@ -2,4 +2,8 @@
 
 #TODO:埋点
 
-grep -r 'MobClick event:' BaseProject/* | awk -F '"' '{print $2}'
+dir=`pwd`
+path=${dir##*/}
+echo $path
+
+grep -r 'MobClick event:' $path/* | awk -F '"' '{print $2}'

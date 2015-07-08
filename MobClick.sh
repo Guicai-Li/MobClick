@@ -4,6 +4,5 @@
 
 dir=`pwd`
 path=${dir##*/}
-echo $path
 
-grep -r 'MobClick event:' $path/* | awk -F '"' '{print $2}'
+grep -r 'MobClick event:' $path/* | awk -F '"' '{print $2}' | sed -e '/^$/d'> MobClick.csv
